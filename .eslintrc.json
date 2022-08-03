@@ -1,0 +1,102 @@
+{
+    "root": true,
+    "ignorePatterns": [
+        "projects/**/*"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "*.ts"
+            ],
+            "parserOptions": {
+                "project": [
+                    "tsconfig.json",
+                    "e2e/tsconfig.json"
+                ],
+                "createDefaultProgram": true
+            },
+            "extends": [
+                "plugin:@angular-eslint/recommended",
+                "plugin:@angular-eslint/ng-cli-compat",
+                "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+                "plugin:@angular-eslint/template/process-inline-templates",
+                "eslint:recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/recommended-requiring-type-checking"
+            ],
+            "rules": {
+                "@angular-eslint/component-selector": [
+                    "error",
+                    {
+                        "type": "element",
+                        "prefix": "app",
+                        "style": "kebab-case"
+                    }
+                ],
+                "@angular-eslint/directive-selector": [
+                    "error",
+                    {
+                        "type": "attribute",
+                        "prefix": "app",
+                        "style": "camelCase"
+                    }
+                ],
+                "@typescript-eslint/no-explicit-any": "error",
+                "comma-dangle": [
+                    "error",
+                    {
+                        "objects": "always-multiline",
+                        "arrays": "always-multiline",
+                        "imports": "always-multiline",
+                        "exports": "always-multiline",
+                        "functions": "always-multiline"
+                    }
+                ],
+                "jsdoc/no-types": "off",
+                "max-len": [
+                    "error",
+                    {
+                        "ignoreRegExpLiterals": false,
+                        "ignoreStrings": false,
+                        "ignorePattern": "^import [^,]+ from |^export | implements ",
+                        "code": 120
+                    }
+                ],
+                "newline-per-chained-call": "off",
+                "@typescript-eslint/naming-convention": [
+                    "error",
+                    {
+                        "selector": "objectLiteralProperty",
+                        "format": [
+                            "camelCase",
+                            "snake_case"
+                        ]
+                    },
+                    {
+                        "selector": "variable",
+                        "modifiers": [
+                            "const"
+                        ],
+                        "format": [
+                            "camelCase",
+                            "UPPER_CASE"
+                        ]
+                    }
+                ],
+                "no-underscore-dangle": [
+                    "off"
+                ],
+                "@typescript-eslint/unbound-method": "off"
+            }
+        },
+        {
+            "files": [
+                "*.html"
+            ],
+            "extends": [
+                "plugin:@angular-eslint/template/recommended"
+            ],
+            "rules": {}
+        }
+    ]
+}
